@@ -1,20 +1,37 @@
 #!/usr/bin/env ruby
+require 'pry'
 
 require_relative "../lib/user.rb"
 require_relative "../lib/teacher.rb"
 require_relative "../lib/student.rb"
 
-steve = Student.new
-steve.first_name = "Steve"
-steve.last_name = "Jobs"
+jim = User.new
+jim.first_name = "Jim"
+jim.last_name  = "Johnson"
 
 avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
+@some_knowledge = avi.teach()
 
-some_knowledge = avi.teach 
+def teach_steve
+  steve = Student.new
+  steve.first_name = "Steve"
+  steve.last_name = "Jobs"
+  steve.learn(@some_knowledge)
+  puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+end
 
-steve.learn(some_knowledge)
+def teach_ledio
+  ledio = Student.new
+  ledio.first_name = "Ledio"
+  ledio.last_name = "Bode"
+  ledio.learn(@some_knowledge)
+  puts "Ledio just learned this important knowledge: '#{ledio.knowledge.first}' from Avi"
+end
 
-puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+# steve.learn(some_knowledge)
+# led.learn(some_knowledge)
+# jim.learn(some_knowledge)
+pry.Start
