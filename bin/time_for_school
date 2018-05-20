@@ -8,13 +8,26 @@ steve = Student.new
 steve.first_name = "Steve"
 steve.last_name = "Jobs"
 
+jonhas = Student.new
+jonhas.first_name = "Jonhas"
+jonhas.last_name = "Jobs"
+
 avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
+jim = User.new
+jim.first_name = "Jim"
+jim.last_name = "Collins"
+#jim.learn
 
-some_knowledge = avi.teach 
+some_knowledge = avi.teach
 
-steve.learn(some_knowledge)
-
+steve.learn(avi.teach)
+jonhas.learn(avi.teach)
+steve.learn(avi.teach)
+jonhas.learn(avi.teach)
 puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+
+puts steve.knowledge
+puts jonhas.knowledge
